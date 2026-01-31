@@ -10,3 +10,4 @@ public class CharacterClick : MonoBehaviour
         dialogueManager.ToggleDialogue(dialoguePanel);
     }
 }
+
