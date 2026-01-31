@@ -18,6 +18,22 @@ public class InspectableObject : MonoBehaviour
     {
         cam = Camera.main;
         outlineObject.SetActive(false);
+
+        // Eğer SpriteRenderer var ise sorting order'ı ana sprite'ınkinden 1 daha küçük yap
+        var mainRenderer = GetComponent<SpriteRenderer>();
+        var outlineRenderer = outlineObject.GetComponent<SpriteRenderer>();
+        if (mainRenderer != null && outlineRenderer != null)
+        {
+            outlineRenderer.sortingLayerID = mainRenderer.sortingLayerID;
+            outlineRenderer.sortingOrder = mainRenderer.sortingOrder - 1;
+        }
+        else
+        {
+            // Eğer outline UI elemanıysa, sibling index ile arkaya çek (aynı canvas içindeyse)
+            var canvas = outlineObject.GetComponentInParent<Canvas>();
+            if (canvas != null)
+                outlineObject.transform.SetAsFirstSibling();
+        }
     }
 
     void Update()
