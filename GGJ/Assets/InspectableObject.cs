@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.EventSystems; // <<< bunu ekle
 
 public class InspectableObject : MonoBehaviour
 {
@@ -21,17 +22,16 @@ public class InspectableObject : MonoBehaviour
 
     void Update()
     {
+        // Eğer fare/işaretçi şu anda bir UI öğesinin üzerindeyse sahne tıklamalarını yok say
+        if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+            return;
+
         if (Mouse.current == null || inspectManager.IsOpen())
             return;
 
-        Vector2 mouseWorldPos =
-            cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-
-        RaycastHit2D hit =
-            Physics2D.Raycast(mouseWorldPos, Vector2.zero);
-
-        bool overThis =
-            hit.collider != null && hit.collider.gameObject == gameObject;
+        Vector2 mouseWorldPos = cam.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        RaycastHit2D hit = Physics2D.Raycast(mouseWorldPos, Vector2.zero);
+        bool overThis = hit.collider != null && hit.collider.gameObject == gameObject;
 
         // Hover
         if (overThis && !isHovering)

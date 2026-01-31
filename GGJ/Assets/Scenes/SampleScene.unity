@@ -4630,7 +4630,6 @@ GameObject:
   - component: {fileID: 2022224787}
   - component: {fileID: 2022224786}
   - component: {fileID: 2022224785}
-  - component: {fileID: 2022224788}
   m_Layer: 5
   m_Name: DiyalogPanel
   m_TagString: Untagged
@@ -4697,18 +4696,6 @@ RectTransform:
   m_AnchoredPosition: {x: 18.635315, y: -354}
   m_SizeDelta: {x: 2360.2534, y: 448.5505}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!225 &2022224788
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2022224784}
-  m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &2080409619
 GameObject:
   m_ObjectHideFlags: 0
