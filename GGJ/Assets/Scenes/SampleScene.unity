@@ -622,8 +622,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 332474977}
-        m_TargetAssemblyTypeName: LocationManager, Assembly-CSharp
+      - m_Target: {fileID: 332474979}
+        m_TargetAssemblyTypeName: LocationManagerr, Assembly-CSharp
         m_MethodName: GoRight
         m_Mode: 1
         m_Arguments:
@@ -681,7 +681,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 332474978}
-  - component: {fileID: 332474977}
+  - component: {fileID: 332474979}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -689,25 +689,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &332474977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 332474976}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed0d8ebc1b281dd45afa2656f0818323, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LocationManager
-  currentLocation: 0
-  baloRoot: {fileID: 1810151482}
-  kutuphaneRoot: {fileID: 1274978489}
-  balkonRoot: {fileID: 1609765366}
-  leftArrow: {fileID: 419537668}
-  rightArrow: {fileID: 199123558}
-  dialogueManager: {fileID: 2129468912}
 --- !u!4 &332474978
 Transform:
   m_ObjectHideFlags: 0
@@ -723,6 +704,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &332474979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332474976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c220b844e2e6d784fab07ca22fba7b16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LocationManagerr
+  currentLocation: 0
+  baloRoot: {fileID: 1810151482}
+  kutuphaneRoot: {fileID: 1274978489}
+  balkonRoot: {fileID: 1609765366}
+  leftArrow: {fileID: 419537668}
+  rightArrow: {fileID: 199123558}
+  dialogueManager: {fileID: 2129468912}
 --- !u!1 &380762270
 GameObject:
   m_ObjectHideFlags: 0
@@ -986,8 +986,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 332474977}
-        m_TargetAssemblyTypeName: LocationManager, Assembly-CSharp
+      - m_Target: {fileID: 332474979}
+        m_TargetAssemblyTypeName: LocationManagerr, Assembly-CSharp
         m_MethodName: GoLeft
         m_Mode: 1
         m_Arguments:
