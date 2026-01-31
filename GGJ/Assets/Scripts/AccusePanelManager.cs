@@ -30,8 +30,8 @@ public class AccusePanelManager : MonoBehaviour
         {
             restartButton.onClick.RemoveAllListeners();
             restartButton.onClick.AddListener(RestartScene);
-            // Restart her zaman görünür/aktif olabilir; istersen başlangıçta gizle/disable da yapabilirsin
-            restartButton.interactable = true;
+            // Başlangıçta restart pasif olsun; tahmin yapıldıktan sonra aktifleşecek
+            restartButton.interactable = false;
         }
 
         ResetPanel();
@@ -39,23 +39,23 @@ public class AccusePanelManager : MonoBehaviour
 
     public void OnCandidateClicked(int idx)
     {
+        // Tahmin yapıldığı anda butonları pasifleştir ve restart'ı aktifleştir
+        SetCandidatesInteractable(false);
+
+        // Restart butonu tahminden sonra aktif olsun
+        if (restartButton != null)
+            restartButton.interactable = true;
+
         // Doğru seçim
         if (idx == correctIndex)
         {
             resultText.text = "Tebrikler — Katili buldun!";
-            SetCandidatesInteractable(false);
-            // Başarı sonrası istenirse ek işlemler yapılabilir (scene değiştir, ödül ver, vs.)
-            // restart butonunu da istersen devre dışı bırakabilirsin:
-            // if (restartButton != null) restartButton.interactable = false;
+            // Buraya doğruysa oyunu ilerletme (scene yükle, cutscene vs) ekleyebilirsin
         }
-        // Yanlış seçim -> tekrar tahmin hakkı yok, sadece restart ile yeniden başlatma
+        // Yanlış seçim
         else
         {
             resultText.text = "Yanlış kişi. Baştan oynamak için yeniden başlatın.";
-            SetCandidatesInteractable(false);
-            // Restart butonunu aktif bırak (zorunlu yeniden başlatma)
-            if (restartButton != null)
-                restartButton.interactable = true;
         }
     }
 
@@ -70,13 +70,12 @@ public class AccusePanelManager : MonoBehaviour
         resultText.text = "Katili tahmin et.";
         SetCandidatesInteractable(true);
         if (restartButton != null)
-            restartButton.interactable = true; // istersen başlangıçta pasif yapabilirsin
+            restartButton.interactable = false; // Başlangıçta pasif
     }
 
     void RestartScene()
     {
-        // Eğer GameProgressTracker Singleton'ını persist (DontDestroyOnLoad) yapmışsan,
-        // restart öncesi progress'i temizle.
+        // Eğer GameProgressTracker Singleton'ını persist yaptıysan, restart öncesi temizle
         if (GameProgressTracker.Instance != null)
             GameProgressTracker.Instance.ResetProgress();
 
