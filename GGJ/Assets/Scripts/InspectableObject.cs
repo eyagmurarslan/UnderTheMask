@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.EventSystems; // <<< bunu ekle
+using UnityEngine.EventSystems; // zaten ekledin
 
 public class InspectableObject : MonoBehaviour
 {
@@ -11,6 +11,10 @@ public class InspectableObject : MonoBehaviour
     [Header("References")]
     public InspectManager inspectManager;
 
+    [Header("Progress")]
+    [Tooltip("Bu obje için benzersiz ID (ör: 'obj_01'). Boşsa progress'e dahil edilmez.")]
+    public string interactionID;
+
     private Camera cam;
     private bool isHovering;
 
@@ -19,20 +23,10 @@ public class InspectableObject : MonoBehaviour
         cam = Camera.main;
         outlineObject.SetActive(false);
 
-        // Eğer SpriteRenderer var ise sorting order'ı ana sprite'ınkinden 1 daha küçük yap
-        var mainRenderer = GetComponent<SpriteRenderer>();
-        var outlineRenderer = outlineObject.GetComponent<SpriteRenderer>();
-        if (mainRenderer != null && outlineRenderer != null)
+        // GameProgressTracker'a kendini kayıt ettir
+        if (!string.IsNullOrEmpty(interactionID) && GameProgressTracker.Instance != null)
         {
-            outlineRenderer.sortingLayerID = mainRenderer.sortingLayerID;
-            outlineRenderer.sortingOrder = mainRenderer.sortingOrder - 1;
-        }
-        else
-        {
-            // Eğer outline UI elemanıysa, sibling index ile arkaya çek (aynı canvas içindeyse)
-            var canvas = outlineObject.GetComponentInParent<Canvas>();
-            if (canvas != null)
-                outlineObject.transform.SetAsFirstSibling();
+            GameProgressTracker.Instance.RegisterTarget(interactionID);
         }
     }
 
@@ -64,7 +58,14 @@ public class InspectableObject : MonoBehaviour
         // Click
         if (overThis && Mouse.current.leftButton.wasPressedThisFrame)
         {
+            // Inspect aç
             inspectManager.Open(inspectSprite);
+
+            // Inspect etmek target sayılırsa işaretle
+            if (!string.IsNullOrEmpty(interactionID) && GameProgressTracker.Instance != null)
+            {
+                GameProgressTracker.Instance.MarkCompleted(interactionID);
+            }
         }
     }
 }
