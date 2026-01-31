@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LocationManager : MonoBehaviour
+public class LocationManagerr : MonoBehaviour
 {
     public enum Location
     {
@@ -10,7 +10,6 @@ public class LocationManager : MonoBehaviour
         Balkon
     }
 
-    [Header("Current Location")]
     public Location currentLocation;
 
     [Header("Location Roots")]
@@ -34,20 +33,20 @@ public class LocationManager : MonoBehaviour
     {
         currentLocation = newLocation;
 
-        // Mekanları kapat
         baloRoot.SetActive(false);
         kutuphaneRoot.SetActive(false);
         balkonRoot.SetActive(false);
 
-        // Aktif mekanı aç
         switch (currentLocation)
         {
             case Location.Balo:
                 baloRoot.SetActive(true);
                 break;
+
             case Location.Kutuphane:
                 kutuphaneRoot.SetActive(true);
                 break;
+
             case Location.Balkon:
                 balkonRoot.SetActive(true);
                 break;
@@ -55,7 +54,6 @@ public class LocationManager : MonoBehaviour
 
         UpdateArrowButtons();
 
-        // 🔴 Mekan değişti → açık diyalog varsa kapat
         if (dialogueManager != null)
             dialogueManager.CloseAll();
     }
