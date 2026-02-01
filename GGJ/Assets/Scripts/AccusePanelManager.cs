@@ -13,6 +13,10 @@ public class AccusePanelManager : MonoBehaviour
     [Tooltip("Doğru karakterin index'i candidateButtons içindeki index'e göre (0-based)")]
     public int correctIndex = 0;
 
+    [Header("Scene")]
+    [Tooltip("Ana menü sahnesinin adı (Build Settings'te eklenmiş olmalı).")]
+    public string mainMenuSceneName = "MainMenu";
+
     void Start()
     {
         // Her butona index parametresi ver ve listener ekle
@@ -29,7 +33,7 @@ public class AccusePanelManager : MonoBehaviour
         if (restartButton != null)
         {
             restartButton.onClick.RemoveAllListeners();
-            restartButton.onClick.AddListener(RestartScene);
+            restartButton.onClick.AddListener(ReturnToMainMenu);
             // Başlangıçta restart pasif olsun; tahmin yapıldıktan sonra aktifleşecek
             restartButton.interactable = false;
         }
@@ -55,7 +59,7 @@ public class AccusePanelManager : MonoBehaviour
         // Yanlış seçim
         else
         {
-            resultText.text = "Yanlış kişi. Baştan oynamak için yeniden başlatın.";
+            resultText.text = "Yanlış kişi. Baştan oynamak için ana menüye dönün.";
         }
     }
 
@@ -73,13 +77,20 @@ public class AccusePanelManager : MonoBehaviour
             restartButton.interactable = false; // Başlangıçta pasif
     }
 
-    void RestartScene()
+    void ReturnToMainMenu()
     {
-        // Eğer GameProgressTracker Singleton'ını persist yaptıysan, restart öncesi temizle
+        // Eğer GameProgressTracker Singleton'ını persist yaptıysan, geri dönmeden önce temizle
         if (GameProgressTracker.Instance != null)
             GameProgressTracker.Instance.ResetProgress();
 
         Time.timeScale = 1f;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        if (string.IsNullOrEmpty(mainMenuSceneName))
+        {
+            Debug.LogWarning("AccusePanelManager: mainMenuSceneName boş. Build Settings'te ana menü sahne adını gir.");
+            return;
+        }
+
+        SceneManager.LoadScene(mainMenuSceneName);
     }
 }
