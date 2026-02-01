@@ -3,11 +3,16 @@ using UnityEngine.UI;
 
 public class DialogueController : MonoBehaviour
 {
-    public static DialogueController ActiveDialogue; // mevcut satır
+    public static DialogueController ActiveDialogue;
 
     [Header("UI")]
     public GameObject dialoguePanel;
     public Text dialogueText;
+    public Text speakerText; // 🔹 KİM KONUŞUYOR TEXT
+
+    [Header("Speaker Names")]
+    public string playerName = "Oyuncu";
+    public string characterName = "NPC";
 
     [Header("Dialogue Manager")]
     public DialogueManager dialogueManager;
@@ -16,14 +21,13 @@ public class DialogueController : MonoBehaviour
     [TextArea(2, 6)]
     public string[] dialogueLines;
 
-    [Tooltip("Bu karakter/etkileşim için benzersiz ID (ör: 'char_01'). Dialogue tamamlandığında bu ID GameProgressTracker'a gönderilecek.")]
+    [Tooltip("Bu karakter/etkileşim için benzersiz ID")]
     public string characterID;
 
     private int currentIndex = 0;
 
     void Start()
     {
-        // Kendini ilerleme sistemine kaydet
         if (!string.IsNullOrEmpty(characterID) && GameProgressTracker.Instance != null)
         {
             GameProgressTracker.Instance.RegisterTarget(characterID);
@@ -39,7 +43,9 @@ public class DialogueController : MonoBehaviour
         currentIndex = 0;
 
         dialoguePanel.SetActive(true);
+
         dialogueText.text = dialogueLines[currentIndex];
+        UpdateSpeaker(); // 👈 KİM KONUŞUYOR
 
         if (dialogueManager != null)
             dialogueManager.ToggleDialogue(dialoguePanel);
@@ -54,7 +60,6 @@ public class DialogueController : MonoBehaviour
 
         if (currentIndex >= dialogueLines.Length)
         {
-            // Diyalog bitti: panel kapat ve progress'e bildir
             dialoguePanel.SetActive(false);
             ActiveDialogue = null;
 
@@ -70,5 +75,17 @@ public class DialogueController : MonoBehaviour
         }
 
         dialogueText.text = dialogueLines[currentIndex];
+        UpdateSpeaker(); // 👈 GÜNCELLE
+    }
+
+    void UpdateSpeaker()
+    {
+        if (speakerText == null)
+            return;
+
+        if (currentIndex % 2 == 0)
+            speakerText.text = playerName;
+        else
+            speakerText.text = characterName;
     }
 }
