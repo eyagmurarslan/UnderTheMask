@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c5bc1d3b34c5279459068bc9d34d68d3
+guid: bddbc033f2789fd4c9ea46f86cf33178
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7979056805732687394
-    second: balkon_0
+      213: -1495448514261724874
+    second: ok - Kopya_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: balkon_0
+      name: ok - Kopya_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1536
-        height: 1024
+        y: 2
+        width: 475
+        height: 269
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 22e1c54d3ed4bbe60800000000000000
-      internalID: 7979056805732687394
+      spriteID: 6315b8fdf791f3be0800000000000000
+      internalID: -1495448514261724874
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      balkon_0: 7979056805732687394
+      ok - Kopya_0: -1495448514261724874
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

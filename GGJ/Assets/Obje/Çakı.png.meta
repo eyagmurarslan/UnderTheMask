@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7c36835c00df2544f914630fb1f9de57
+guid: 69b76dd50103e7f4cadcc1f6759ba2cf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 408002052061281036
-    second: "k\xFCt\xFCphane_0"
+      213: -7609922074596864765
+    second: "\xC7ak\u0131_0"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: "k\xFCt\xFCphane_0"
+      name: "\xC7ak\u0131_0"
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1536
-        height: 1024
+        x: 119
+        y: 101
+        width: 2551
+        height: 1336
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c0b3eb464b389a500800000000000000
-      internalID: 408002052061281036
+      spriteID: 30d00473130246690800000000000000
+      internalID: -7609922074596864765
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      "k\xFCt\xFCphane_0": 408002052061281036
+      "\xC7ak\u0131_0": -7609922074596864765
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 31ce37790eca2d842b6e026b32134c00
+guid: 74398a5791a55684baa0f3a6f07b2ce6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8103818271869200616
-    second: salon_0
+      213: -669906555926362245
+    second: Eldiven_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: salon_0
+      name: Eldiven_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 1536
-        height: 1024
+        x: 105
+        y: 162
+        width: 1235
+        height: 2710
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8e8651b48cb867070800000000000000
-      internalID: 8103818271869200616
+      spriteID: b77cd45698304b6f0800000000000000
+      internalID: -669906555926362245
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      salon_0: 8103818271869200616
+      Eldiven_0: -669906555926362245
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
