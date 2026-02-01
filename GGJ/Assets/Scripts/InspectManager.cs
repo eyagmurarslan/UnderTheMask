@@ -5,6 +5,7 @@ public class InspectManager : MonoBehaviour
 {
     public GameObject inspectPanel;
     public Image inspectImage;
+    public Text inspectText; // PNG ALTINDAKİ YAZI
 
     private bool isOpen = false;
 
@@ -13,9 +14,11 @@ public class InspectManager : MonoBehaviour
         inspectPanel.SetActive(false);
     }
 
-    public void Open(Sprite sprite)
+    public void Open(Sprite sprite, string description)
     {
         inspectImage.sprite = sprite;
+        inspectText.text = description;
+
         inspectPanel.SetActive(true);
         isOpen = true;
     }
@@ -24,6 +27,7 @@ public class InspectManager : MonoBehaviour
     {
         inspectPanel.SetActive(false);
         inspectImage.sprite = null;
+        inspectText.text = "";
         isOpen = false;
     }
 

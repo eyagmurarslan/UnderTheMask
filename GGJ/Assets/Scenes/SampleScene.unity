@@ -406,6 +406,7 @@ MonoBehaviour:
   outlineObject: {fileID: 937644938}
   inspectSprite: {fileID: 8832167503239892954, guid: 35b5304fcab75aa4c8910178ee418c71, type: 3}
   inspectManager: {fileID: 1497123167}
+  inspectDescription: dfgfdf
   interactionID: 11
 --- !u!61 &59711007
 BoxCollider2D:
@@ -1191,6 +1192,7 @@ MonoBehaviour:
   outlineObject: {fileID: 2012549695}
   inspectSprite: {fileID: 8832167503239892954, guid: 35b5304fcab75aa4c8910178ee418c71, type: 3}
   inspectManager: {fileID: 1497123167}
+  inspectDescription: jhgfghj
   interactionID: 13
 --- !u!61 &235363324
 BoxCollider2D:
@@ -1569,6 +1571,7 @@ RectTransform:
   m_Children:
   - {fileID: 662922204}
   - {fileID: 1075703812}
+  - {fileID: 475720606}
   m_Father: {fileID: 179316795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1589,7 +1592,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.078431375}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1885,6 +1888,7 @@ MonoBehaviour:
   outlineObject: {fileID: 1457718936}
   inspectSprite: {fileID: 8832167503239892954, guid: 35b5304fcab75aa4c8910178ee418c71, type: 3}
   inspectManager: {fileID: 1497123167}
+  inspectDescription: kjhg
   interactionID: 18
 --- !u!61 &355106592
 BoxCollider2D:
@@ -2284,6 +2288,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419537666}
   m_CullTransparentMesh: 1
+--- !u!1 &475720605
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 475720606}
+  - component: {fileID: 475720608}
+  - component: {fileID: 475720607}
+  m_Layer: 5
+  m_Name: imageaciklamatext
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &475720606
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475720605}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 317540705}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2.4359, y: -431.86313}
+  m_SizeDelta: {x: 518.8866, y: 65.7263}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &475720607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475720605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Text
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 33
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 46
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: New Text
+--- !u!222 &475720608
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475720605}
+  m_CullTransparentMesh: 1
 --- !u!1 &510459108
 GameObject:
   m_ObjectHideFlags: 0
@@ -2334,6 +2417,7 @@ MonoBehaviour:
   outlineObject: {fileID: 999647713}
   inspectSprite: {fileID: 8832167503239892954, guid: 35b5304fcab75aa4c8910178ee418c71, type: 3}
   inspectManager: {fileID: 1497123167}
+  inspectDescription: "dfghjm\xF6"
   interactionID: 15
 --- !u!61 &510459111
 BoxCollider2D:
@@ -2636,7 +2720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &584958532
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3108,6 +3192,7 @@ MonoBehaviour:
   outlineObject: {fileID: 1612589122}
   inspectSprite: {fileID: 8832167503239892954, guid: 35b5304fcab75aa4c8910178ee418c71, type: 3}
   inspectManager: {fileID: 1497123167}
+  inspectDescription: dfghjk
   interactionID: 19
 --- !u!61 &669621892
 BoxCollider2D:
@@ -3342,7 +3427,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 745500444}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -3381,7 +3466,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_Sprite: {fileID: 2370266980327109674, guid: dc3a3c63483f33442b93f3e8064b8a3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5015,7 +5100,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311858673}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
   m_Material: {fileID: 0}
@@ -5061,7 +5146,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1311858673}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9e586456de8e524a88ad57d47e8b51b, type: 3}
   m_Name: 
@@ -5812,6 +5897,7 @@ MonoBehaviour:
   outlineObject: {fileID: 1481225139}
   inspectSprite: {fileID: 8832167503239892954, guid: 35b5304fcab75aa4c8910178ee418c71, type: 3}
   inspectManager: {fileID: 1497123167}
+  inspectDescription: sdfgfdd
   interactionID: 10
 --- !u!1 &1465602726
 GameObject:
@@ -6160,6 +6246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InspectManager
   inspectPanel: {fileID: 317540704}
   inspectImage: {fileID: 662922205}
+  inspectText: {fileID: 475720607}
 --- !u!1 &1501027205
 GameObject:
   m_ObjectHideFlags: 0
@@ -7210,6 +7297,7 @@ MonoBehaviour:
   outlineObject: {fileID: 554213093}
   inspectSprite: {fileID: 8832167503239892954, guid: 35b5304fcab75aa4c8910178ee418c71, type: 3}
   inspectManager: {fileID: 1497123167}
+  inspectDescription: "\u015Flkjh"
   interactionID: 16
 --- !u!61 &1729945425
 BoxCollider2D:
@@ -7365,6 +7453,7 @@ MonoBehaviour:
   outlineObject: {fileID: 720029906}
   inspectSprite: {fileID: 8832167503239892954, guid: 35b5304fcab75aa4c8910178ee418c71, type: 3}
   inspectManager: {fileID: 1497123167}
+  inspectDescription: kjhgfd
   interactionID: 14
 --- !u!61 &1740612939
 BoxCollider2D:
@@ -7520,6 +7609,7 @@ MonoBehaviour:
   outlineObject: {fileID: 1926741683}
   inspectSprite: {fileID: 8832167503239892954, guid: 35b5304fcab75aa4c8910178ee418c71, type: 3}
   inspectManager: {fileID: 1497123167}
+  inspectDescription: dfvdcv
   interactionID: 12
 --- !u!61 &1759039559
 BoxCollider2D:
@@ -7771,6 +7861,7 @@ MonoBehaviour:
   outlineObject: {fileID: 73861570}
   inspectSprite: {fileID: 8832167503239892954, guid: 35b5304fcab75aa4c8910178ee418c71, type: 3}
   inspectManager: {fileID: 1497123167}
+  inspectDescription: dfgg
   interactionID: 17
 --- !u!61 &1863422556
 BoxCollider2D:
@@ -8380,7 +8471,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1945792054
 RectTransform:
   m_ObjectHideFlags: 0

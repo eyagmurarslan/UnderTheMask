@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.EventSystems; // zaten ekledin
+using UnityEngine.EventSystems;
 
 public class InspectableObject : MonoBehaviour
 {
@@ -10,6 +10,10 @@ public class InspectableObject : MonoBehaviour
 
     [Header("References")]
     public InspectManager inspectManager;
+
+    [Header("Inspect Text")]
+    [TextArea(2, 5)]
+    public string inspectDescription;
 
     [Header("Progress")]
     [Tooltip("Bu obje için benzersiz ID (ör: 'obj_01'). Boşsa progress'e dahil edilmez.")]
@@ -23,7 +27,6 @@ public class InspectableObject : MonoBehaviour
         cam = Camera.main;
         outlineObject.SetActive(false);
 
-        // GameProgressTracker'a kendini kayıt ettir
         if (!string.IsNullOrEmpty(interactionID) && GameProgressTracker.Instance != null)
         {
             GameProgressTracker.Instance.RegisterTarget(interactionID);
@@ -32,7 +35,7 @@ public class InspectableObject : MonoBehaviour
 
     void Update()
     {
-        // Eğer fare/işaretçi şu anda bir UI öğesinin üzerindeyse sahne tıklamalarını yok say
+        // UI üstündeyken sahne tıklamalarını iptal et
         if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
             return;
 
@@ -58,10 +61,8 @@ public class InspectableObject : MonoBehaviour
         // Click
         if (overThis && Mouse.current.leftButton.wasPressedThisFrame)
         {
-            // Inspect aç
-            inspectManager.Open(inspectSprite);
+            inspectManager.Open(inspectSprite, inspectDescription);
 
-            // Inspect etmek target sayılırsa işaretle
             if (!string.IsNullOrEmpty(interactionID) && GameProgressTracker.Instance != null)
             {
                 GameProgressTracker.Instance.MarkCompleted(interactionID);
