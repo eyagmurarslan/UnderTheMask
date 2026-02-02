@@ -53,7 +53,7 @@ public class AccusePanelManager : MonoBehaviour
         // Doğru seçim
         if (idx == correctIndex)
         {
-            resultText.text = "Tebrikler — Katili buldun!";
+            resultText.text = "Tebrikler. Katili buldun!";
             // Buraya doğruysa oyunu ilerletme (scene yükle, cutscene vs) ekleyebilirsin
         }
         // Yanlış seçim
